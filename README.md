@@ -21,3 +21,15 @@ The infrastructure module is designed to:
 - **Jenkins Pipelines** – CI/CD automation scripts
 - **Configs** – Environment variables and reusable settings
 - **Scripts** – Utility scripts for setup and deployment
+
+- **Jenkins**
+  Note: Since Github don't allow localhost webhook the build needs to be triggered manually but the rest will be automated.
+  ![Jenkins](./images/jenkins.png)
+
+- **Docker Hub**
+  Once the Jenkins build was successfully the image will be pushed on a private repository on Docker Hub.
+  ![Docker](./images/docker_hub.png)
+
+- **Docker Container**
+  The image will then be pulled and deployed on a local container.
+  ![Docker](./images/docker_container.png)
