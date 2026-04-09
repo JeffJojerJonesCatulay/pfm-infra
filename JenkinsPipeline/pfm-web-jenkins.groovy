@@ -19,7 +19,7 @@ pipeline {
     
         stage('Build Docker Image') {
             steps {
-                bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                bat "docker build --build-arg VITE_PFM_BASE_URL=/api/v1.0.0/pfm/ -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
             }
         }
         
