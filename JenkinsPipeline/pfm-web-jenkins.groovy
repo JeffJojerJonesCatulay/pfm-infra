@@ -47,7 +47,7 @@ pipeline {
                     docker stop pfm-web || echo No container to stop
                     docker rm pfm-web || echo No container to remove
                     docker pull ${DOCKER_IMAGE}:${DOCKER_TAG}
-                    docker run -d -p 9011:80 --name pfm-web ${DOCKER_IMAGE}:${DOCKER_TAG}
+                    docker run -d -p 5173:80 --name pfm-web ${DOCKER_IMAGE}:${DOCKER_TAG}
                 """
             }
         }
