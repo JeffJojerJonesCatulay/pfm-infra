@@ -30,7 +30,7 @@ The infrastructure module is designed to:
 - **Docker Hub**
   Once the Jenkins build was successfully the image will be pushed on a private repository on Docker Hub.
   ![Docker](./images/docker_hub.png)
-  ![Docker](./images/web_docker_hub.png)
+  ![Docker](./images/web-dockerhub.png)
 
 - **Docker Container**
   The image will then be pulled and deployed on a local container.
