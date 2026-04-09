@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = "jeffjojerjonescatulay/pfm-api-image-repo"
-        DOCKER_TAG = "${BUILD_NUMBER}"
+        DOCKER_TAG = "v1.0.${BUILD_NUMBER}"
     }
 
     stages {
@@ -47,8 +47,8 @@ pipeline {
                     bat """
                         docker stop pfm-api || echo No container to stop
                         docker rm pfm-api || echo No container to remove
-                        docker pull jeffjojerjonescatulay/pfm-api-image-repo:${BUILD_NUMBER}
-                        docker run -d --env-file "%ENV_FILE%" -p 9010:9010 --name pfm-api jeffjojerjonescatulay/pfm-api-image-repo:${BUILD_NUMBER}
+                        docker pull ${DOCKER_IMAGE}:${DOCKER_TAG}
+                        docker run -d --env-file "%ENV_FILE%" -p 9010:9010 --name pfm-api ${DOCKER_IMAGE}:${DOCKER_TAG}
                     """
                 }
             }
