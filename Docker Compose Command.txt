@@ -1,0 +1,6 @@
+# 1. Stop and wipe the old containers and data 
+# (Required to fix the MySQL loop)
+docker-compose down -v
+
+# 2. Start everything back up using your new .env file
+docker-compose up -d
